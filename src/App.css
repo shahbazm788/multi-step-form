@@ -1,0 +1,110 @@
+:root{
+
+    --Marine-blue: hsl(213, 96%, 18%);
+    --purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
+    --body-font: 14px;
+    --cool-gray: hsl(231, 11%, 63%);
+    --light-gray: hsl(229, 24%, 87%);
+    --magnolia: hsl(217, 100%, 97%);
+    --alabaster: hsl(231, 100%, 99%);
+    --white: hsl(0, 0%, 100%);
+
+  }
+  @font-face {
+    font-family: 'ubuntu-reguler';
+    src: url('./assets/fonts/Ubuntu-Regular.ttf') ;
+    }
+    @font-face {
+      font-family: 'ubuntu-bold';
+      src: url('./assets/fonts/Ubuntu-Bold.ttf') ;
+      }
+      @font-face {
+        font-family: 'ubuntu-medium';
+        src: url('./assets/fonts/Ubuntu-Medium.ttf') ;
+        }
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: ubuntu-reguler;
+}
+.main{
+  height:  100vh;
+  background: var(--Light-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inner{
+  width: 900px;
+  height: 610px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.left{
+  width: 290px;
+  background-image: url('./images/bg-sidebar-desktop.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  /* border-radius: 10px; */
+  /* border: 1px solid red; */
+  margin-top: 5px;
+  height: 600px;
+}
+.right{
+  width: 550px;
+  height: 610px;
+  /* border: 1px solid red; */
+  padding: 0 50px  0 35px;
+}
+.persnol_hedding{
+  margin-top: 55px;
+  font-size: 32px;
+font-family: ubuntu-bold;
+}
+.persnol_peragraf{
+ font-size: var(--body-font);
+ margin-top: 10px;
+ margin-bottom: 30px;
+}
+.input_div{
+  width: 90%;
+  margin-top: 35px;
+}
+.name_and_error{
+  display: flex;
+  justify-content: space-between;
+}
+.name_p{
+  /* margin-top: 50px; */
+  font-size: 1rem;
+  font-weight: 50px;
+}
+.input{
+  width: 100%;
+  height: 45px;
+  padding-left: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid var(--light-gray);
+}
+.btn_next{
+  width: 120px;
+  height: 45px;
+  background-color: var(--Marine-blue);
+  border: none;
+  outline: none;
+  margin-top: 120px;
+  float: right;
+  margin-right: 35px;
+  color: var(--white);
+  font-size: var(--body-font);
+  border-radius: 10px;
+}
