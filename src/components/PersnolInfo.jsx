@@ -25,9 +25,8 @@ const PersnolInfo  =  () =>  {
               <p className='name_p'>Phone Number</p>
               <p>This field is requierd</p>
               </div>
-              <input type="number" className='input' placeholder='e.g. +92 340 8628219' />
+              <input type="text" className='input' placeholder='e.g. +92 340 8628219' />
             </div>
-      <button className='btn_next' >Next Step</button>
      
      
 </div>
