@@ -451,3 +451,145 @@ font-weight: 500;
   color: var(--purplish-blue);
   font-weight: 700;
 }
+
+.thankyou{
+  width:100%;
+  height:100%;
+display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.thanks_inner{
+  display:flex;
+  flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.thanks_img, .thanks_h3, .thanks_p{
+  margin:10px;
+    text-align: center;
+}
+.thanks_p{
+  color: var(--cool-gray)
+}
+
+
+@media screen and (max-width:992px){
+  .main{
+    display:block;
+    padding:0;
+    margin:0;
+  }
+  .inner{
+    display:block;
+    width:100%;
+    margin:0px;
+  
+  background: var(--magnolia);
+  border-radius: 0px;
+  padding: 0px;
+  }
+  .left{
+    width:100% ;
+    height:200px;
+    padding:0;
+    display:flex;
+  }
+  .left{
+  width: 100%;
+  background-image: url('./images/bg-sidebar-mobile.svg');
+  
+  
+  /* border-radius: 10px; */
+  /* border: 1px solid red; */
+  margin-top: 0px;
+  padding: 0px;
+  height:170px;
+
+}
+.list_outer{
+  width: 100%;
+  height: 100%;
+  display:flex;
+  color: var(--white);
+  
+  justify-content: center;
+}
+.list_div{
+  display: flex;
+  width: 100%;
+  height: 30px;
+  cursor: pointer;
+  margin:7px;
+  
+  
+}
+.list_bg_add{
+  background: var(--Light-blue);
+  color: var(--Marine-blue);
+  border-color: var(--Light-blue) !important;
+}
+
+
+.info_div{
+  display: none;
+}
+
+
+.right{
+  width: 100%;
+  
+  /* border: 1px solid red; */
+  padding:0px ;
+  position: relative;
+  margin-top: -75px;
+  height:550px;
+  
+  background: transparent;
+}
+.component_outer{
+  background: var(--white);
+  width :94%;
+  margin: 0px 3%;
+  padding:20px;
+  padding-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px  solid rgba(0,0,0,0.3);
+}
+.persnol_hedding{
+  margin-top: 20px;
+  font-size: 1.5rem;
+font-family: ubuntu-bold;
+color: var(--Marine-blue);
+}
+.persnol_peragraf{
+ 
+ letter-spacing: 1px;
+ font-weight: 700;
+
+}
+.input_div{
+  width: 100%;
+  margin-top: 20px;
+}
+.name_and_error{
+  display: flex;
+  justify-content: space-between;
+}
+.name_p{
+  /* margin-top: 50px; */
+  font-size: 1rem;
+  font-weight: 50px;
+}
+.input{
+  width: 100%;
+  height: 35px;
+  
+}
+.next_btn_div{
+  background: var(--white);
+}
+
+
+
+}
