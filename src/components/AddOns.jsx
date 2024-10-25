@@ -41,8 +41,8 @@ const [border,setBorder] = useState({
                         </label>
                     </div>
                     <div className="info_list">
-                        <h4>Online Service </h4>
-                        <p>Access to multiplayer games</p>
+                        <h4>Larger Storage </h4>
+                        <p>Extra 1TB of cloud save</p>
                     </div>
                     <div className="add_on_price">
                         <p>+$ 1/mo</p>
@@ -58,8 +58,8 @@ const [border,setBorder] = useState({
                         </label>
                     </div>
                     <div className="info_list">
-                        <h4>Online Service </h4>
-                        <p>Access to multiplayer games</p>
+                        <h4>Customizable profile </h4>
+                        <p>Custom theme on your profile</p>
                     </div>
                     <div className="add_on_price">
                         <p>+$ 1/mo</p>

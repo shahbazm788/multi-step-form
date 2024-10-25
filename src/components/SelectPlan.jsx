@@ -19,30 +19,37 @@ const SelectPlan = () => {
         <div className="card card_active">
           <div className="arcade">
             <div className='plan_image_div'><img src={arcade} alt="" /></div>
+            <div className="plan_info">
             <h4 className='card_h4'>Arcade</h4>
-            {/* <p className='card_p'>$9/mo</p> */}
-            {planTime == "m" ? <p className='card_p'>$9/mo</p> :<p className='card_p'>$90/yr</p>}
-            {planTime == "y" ? <p className='free_offer'>2 months free</p> :""}
+              {/* <p className='card_p'>$9/mo</p> */}
+              {planTime == "m" ? <p className='card_p'>$9/mo</p> :<p className='card_p'>$90/yr</p>}
+              {planTime == "y" ? <p className='free_offer'>2 months free</p> :""}
 
+            </div>
           </div>
         </div>
 
         <div className="card">
           <div className="arcade">
             <div className='plan_image_div'><img src={advanced} alt="" /></div>
-            <h4 className='card_h4'>Advanced</h4>
+           <div className="plan_info">
+           <h4 className='card_h4'>Advanced</h4>
             {planTime == "m" ? <p className='card_p'>$12/mo</p> :<p className='card_p'>$120/yr</p>}
             {planTime == "y" ? <p className='free_offer'>2 months free</p> :""}
+           </div>
           </div>
         </div>
 
         <div className="card">
           <div className="arcade">
             <div className='plan_image_div'><img src={pro} alt="" /></div>
-          </div>
-          <h4 className='card_h4'>Pro</h4>
+          
+         <div className="plan_info">
+         <h4 className='card_h4'>Pro</h4>
           {planTime == "m" ? <p className='card_p'>$15/mo</p> :<p className='card_p'>$150/yr</p>}
             {planTime == "y" ? <p className='free_offer'>2 months free</p> :""}
+         </div>
+         </div>
         </div>
 
 
