@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Summary = () => {
+const Summary = (item) => {
+const { allData, changData, planPrice } = item;
+const planType = allData.planType;
   return (
     <div>
           <h2 className='persnol_hedding'>Finishing up</h2>
@@ -9,7 +11,7 @@ const Summary = () => {
           <div className="summery_outer">
             <div className="plan_selection">
                 <div className="sumery_left">
-                    <h4>Acorde (monthly)</h4>
+                    <h4>{planType} ({allData.plan})</h4>
                     <p>Change</p>
 
                 </div>

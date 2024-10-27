@@ -15,7 +15,26 @@ import AddOns from './components/AddOns.jsx';
 import Summary from './components/Summary.jsx';
 import ThankYou from './components/ThankYou.jsx';
 function App() {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(2);
+
+const [planPrice,setPlanPrice] = useState({
+  monthly : {
+    arcade:9,
+    advanced: 12,
+    pro:15,
+    online_service: 1,
+    larger_storage: 2,
+    customizableprofile: 2,
+  },
+  yearly : {
+    arcade:90,
+    advanced: 120,
+    pro:150,
+    online_service: 10,
+    larger_storage: 20,
+    customizableprofile: 20,
+  },
+});
 
   const [allData, setAlldata] = useState({
     userName: "",
@@ -23,11 +42,9 @@ function App() {
     userPhone: "",
     plan: "mo",
     planType: "arcade",
-    userservices: {
-      online_service: true,
-      larger_storage: true,
-      customizableprofile: false,
-    },
+    online_service: false,
+    larger_storage: false,
+    customizableprofile: false,
     totalPrice: 0,
     stage: 1
 
@@ -46,7 +63,19 @@ function App() {
     else if (key === "planType") {
       setAlldata({ ...allData, planType: value })
     }
-
+    else if (key === "plan") {
+      setAlldata({ ...allData, plan: value })
+    }
+    else if (key === "online_service") {
+      setAlldata({...allData, online_service: value })
+    }
+    else if (key === "larger_storage") {
+      setAlldata({...allData, larger_storage: value })
+    }
+    else if (key === "customizableprofile") {
+      setAlldata({...allData, customizableprofile: value })
+    }
+    
     // console.log(key,value)
     // console.log(value)
   }
@@ -78,7 +107,9 @@ function App() {
           <div className="right">
             <div className="component_outer">
               {count == 1 ? <PersnolInfo allData={allData} changData={changData} /> : count == 2 ?
-                <SelectPlan allData={allData} changData={changData} /> : count == 3 ? <AddOns /> : count == 4 ? <Summary /> : count == 5 ? <ThankYou /> : ''}
+                <SelectPlan allData={allData} changData={changData} planPrice={planPrice}/> :
+                 count == 3 ? <AddOns allData={allData} changData={changData} planPrice={planPrice} /> :
+                  count == 4 ? <Summary  allData={allData} changData={changData} planPrice={planPrice} /> : count == 5 ? <ThankYou /> : ''}
             </div>
             {count == 5 ? '' : <div className="next_btn_div">
               {count < 4 ? <button className='btn_next' onClick={() => {
@@ -91,6 +122,14 @@ function App() {
     
                     }
                 }
+                else  {
+                  setCount(count == 5 ? 5 : count + 1)
+                  
+                }
+                // else if(count == 2) {
+                //   setCount(count == 5 ? 5 : count + 1)
+                  
+                // }
                
               }} >Next Step</button> :
                 <button className='btn_next btn_confirm' onClick={() => setCount(count == 5 ? 5 : count + 1)} >Confirm</button>}
