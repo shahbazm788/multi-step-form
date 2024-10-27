@@ -10,16 +10,16 @@ const PersnolInfo = (item) => {
   const { allData, changData } = item;
   const [show,setshow] = useState('show_error');
   const [hide,setHide] = useState("hide_error");
-  const [showErrors,setShowErrors] = useState({
-    nameError:'show_error',
-    emailError: '',
-    phoneError:''
+  const [formData,setFormData] = useState({
+    name:'',
+    email: '',
+    phone:''
      
   })
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  // },[showErrors])
+  },[formData])
   return (
     <div>
       <h2 className='persnol_hedding'>Personal info</h2>
@@ -27,20 +27,15 @@ const PersnolInfo = (item) => {
 
       <div className='input_div'>
         <div className="name_and_error">
-          <p className='name_p'>Name</p>
-          <p className='show_err'>This field is requierd</p>
+          <p className='name_p'>Name <span className='star_span'>*</span></p>
+          <p className={`${formData.name.length > 0 && formData.name.length < 3 ? "danger" :"dangerhide"}`}>This field is requierd</p>
         </div>
         <input type="text" className='input' placeholder='e.g. Mohammad Shahbaz'
           onChange={(e) => {
-            if(e.target.value.length < 3){
-              setShowErrors({...showErrors,nameError:"show_error"})
-              console.log(showErrors)
-            }else{
-              setShowErrors({...showErrors,nameError:"hide_error"})
-              console.log(showErrors)
-
-            }
-            changData("userName", e.target.value);
+            setFormData({...formData,name:e.target.value});
+              if(formData.name.length > 3 ){
+             changData("userName", e.target.value);
+              }
           }}
 
 
@@ -48,13 +43,19 @@ const PersnolInfo = (item) => {
       </div>
       <div className='input_div'>
         <div className="name_and_error">
-          <p className='name_p'>Email Address</p>
-          <p>This field is requierd</p>
+          <p className='name_p'>Email Address <span className='star_span'>*</span></p>
+          <p className={`${formData.email == "typing"  ? 'danger': 'dangerhide'}`}>This field is requierd</p>
         </div>
         <input type="email" className='input' placeholder='e.g. shahbazm788@gmail.com'
+        onFocus={() => {
+            setFormData({...formData,email:'typing'});
+        }}
           onChange={(e) => {
             let valedate = regex.test(e.target.value);
-            console.log(valedate)
+            if(valedate === true){
+            setFormData({...formData,email:e.target.value});
+             changData("userEmail", e.target.value);
+            }
             // changData("userEmail", e.target.value);
           }}
 
@@ -63,13 +64,24 @@ const PersnolInfo = (item) => {
       </div>
       <div className='input_div'>
         <div className="name_and_error">
-          <p className='name_p'>Phone Number</p>
-          <p>This field is requierd</p>
+          <p className='name_p'>Phone Number <span className='star_span'>*</span></p>
+          <p className={`${formData.phone == "typing"  ? 'danger': 'dangerhide'}`}>This field is requierd</p>
         </div>
         <input type="text" className='input' placeholder='e.g. +92 340 8628219'
+        onFocus={() => {
+            if(formData.phone.length < 10 ){
+          setFormData({...formData,phone:'typing'});
+            }
+        }}
           onChange={(e) => {
-
+            if(e.target.value.length > 10){
+              setFormData({...formData,phone:e.target.value});
             changData("userPhone", e.target.value);
+            }
+            else{
+          setFormData({...formData,phone:'typing'});
+
+            }
           }}
 
         />

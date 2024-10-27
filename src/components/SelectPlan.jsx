@@ -4,8 +4,9 @@ import advanced from '../images/icon-advanced.svg';
 import pro from '../images/icon-pro.svg';
 
 
-const SelectPlan = () => {
+const SelectPlan = (item) => {
   const [planTime,setPlantime] = useState("m");
+  const { allData, changData } = item;
 
 
   return (
@@ -16,7 +17,11 @@ const SelectPlan = () => {
       <div className="plan_cards">
 
 
-        <div className="card card_active">
+        <div className="card card_active" 
+          onClick={() => {
+            changData("planType","arcade");
+          }}
+        >
           <div className="arcade">
             <div className='plan_image_div'><img src={arcade} alt="" /></div>
             <div className="plan_info">
@@ -29,7 +34,11 @@ const SelectPlan = () => {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" 
+         onClick={() => {
+          changData("planType","Advanced");
+        }}
+        >
           <div className="arcade">
             <div className='plan_image_div'><img src={advanced} alt="" /></div>
            <div className="plan_info">
@@ -40,7 +49,11 @@ const SelectPlan = () => {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card"
+         onClick={() => {
+          changData("planType","pro");
+        }}
+        >
           <div className="arcade">
             <div className='plan_image_div'><img src={pro} alt="" /></div>
           
