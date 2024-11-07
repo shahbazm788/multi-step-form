@@ -613,7 +613,9 @@ color: var(--Marine-blue);
   color: var(--Strawberry-red);
 }
 
-
+.plan_cards{
+  display:block;
+}
 .card{
   width: 100%;
   /* margin-right: 3%; */
